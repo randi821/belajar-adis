@@ -26,6 +26,38 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="jenis_kelamin" class="col-md-4 col-form-label text-md-right">{{ __('Jenis Kelamin') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="jenis_kelamin" type="text" class="form-control @error('jenis_kelamin') is-invalid @enderror" name="jenis_kelamin" value="{{ old('jenis_kelamin') }}" required autocomplete="jenis_kelamin" autofocus>
+                                    <option value="">--Select Option--</option>
+                                    <option value="laki-laki">laki-laki</option>
+                                    <option value="perempuan">perempuan</option>
+                                </select>
+
+                                @error('jenis_kelamin')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="alamat_lengkap" class="col-md-4 col-form-label text-md-right">{{ __('Alamat Lengkap') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="alamat_lengkap" type="text" class="form-control @error('alamat_lengkap') is-invalid @enderror" name="alamat_lengkap" value="{{ old('alamat_lengkap') }}" required autocomplete="alamat_lengkap" autofocus></textarea>
+
+                                @error('alamat_lengkap')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">

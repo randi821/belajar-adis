@@ -16,7 +16,11 @@ class CreateAduanTable extends Migration
         Schema::create('aduan', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('nik');
+            $table->string('no_telp');
+            $table->string('lokasi');
             $table->string('aduan');
+            $table->string('image');
             $table->string('status');
             $table->timestamps();
         });
