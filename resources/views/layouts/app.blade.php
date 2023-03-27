@@ -77,5 +77,46 @@
             @yield('content')
         </main>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script>
+        var addModal = function (url, title = "", type="html") {
+            $('#add-modal-box .modal-body').html(`<br><div class='text-center'><i class="fa fa-circle-o-notch fa-spin"></i></div>`);
+            loadUrlTo('#add-modal-box .modal-body', url, type);
+            $('#add-modal-box .modal-title').html(title);
+            $('#add-modal-box').modal('show');
+        }
+        var loadUrlTo = function (tmpTarget, tmpUrl, type) {
+            if (type == 'img') {
+                $(tmpTarget).empty().append("<img src='" + tmpUrl + "' class='w-100'/>");
+            } else {
+                $.ajax({
+                    type: 'GET',
+                    cache: false,
+                    url: tmpUrl,
+                    dataType: 'HTML',
+                    success: function (response) {
+                        // stopPageLoading();
+                        window.onerror 	= true;
+                        $(tmpTarget).empty().append(response);
+                        // handleInit()
+                    },
+                    error: function (xhr, status, error) {
+                        // stopPageLoading();
+                        $(tmpTarget).empty().append(`<font color='red'>`+xhr.statusText+`</font>`);
+                    }
+                });
+            }
+        }
+        $('body').on('click', '[data-toggle=popajax]', function (e) {
+            e.preventDefault();
+            if (e.which != 1) return false;
+
+            let url = $(this).attr('data-url');
+            let title = $(this).attr('data-title') ?? '&nbsp;';
+            let type = $(this).attr('data-url-type') ?? 'html';
+
+            addModal(url, title, type);
+        });
+    </script>
 </body>
 </html>

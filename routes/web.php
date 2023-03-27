@@ -21,5 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('admin', function () { return view('admin'); })->middleware('checkRole:admin');
-Route::get('user', function () { return view('user'); })->middleware(['checkRole:user']);
+Route::get('admin', 'AdminController@index')->name('admin')->middleware('checkRole:admin');
+Route::get('admin/{id}', 'AdminController@show')->name('admin.show')->middleware('checkRole:admin');
+Route::post('admin/edit/{id}', 'AdminController@edit')->name('admin.edit')->middleware('checkRole:admin');
+
+Route::get('user', 'UserController@index')->name('user')->middleware(['checkRole:user']);
+Route::post('user', 'UserController@aduan')->name('user.aduan')->middleware(['checkRole:user']);
