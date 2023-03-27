@@ -54,17 +54,5 @@
             </td>
         </tr>
     </table>
-    <!-- <p>Nama :</p>
-    <p>{{ $aduan->nama }}</p>
-    <p>NIK :</p>
-    <p>{{ $aduan->nik }}</p>
-    <p>Nomor Telepon :</p>
-    <p>{{ $aduan->no_telp }}</p>
-    <p>Tanggal Aduan :</p>
-    <p>{{ $aduan->created_at }}</p>
-    <p>Lokasi :</p>
-    <p>{{ $aduan->lokasi }}</p>
-    <p>Aduan :</p>
-    <p>{{ $aduan->aduan }}</p> -->
 </body>
 </html>

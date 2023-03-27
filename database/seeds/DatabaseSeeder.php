@@ -16,50 +16,50 @@ class DatabaseSeeder extends Seeder
             'jenis_kelamin' => 'perempuan',
             'alamat_lengkap' => 'jln.veteran III',
             'email'	=> 'adis@gmail.com',
-            'password'	=> bcrypt('adiscantik'),
+            'password'	=> bcrypt('iniadis1204'),
             'role' => 'admin'
         ]);
         \App\User::create([
             'name'	=> 'apil',
             'jenis_kelamin' => 'laki-laki',
-            'alamat_lengkap' => 'jln.veteran III',
+            'alamat_lengkap' => 'Gg. Limbung Bangsa no. 107',
             'email'	=> 'apil@gmail.com',
-            'password'	=> bcrypt('apilkocheng'),
+            'password'	=> bcrypt('apilganglimbung'),
             'role' => 'petugas'
         ]);
         \App\User::create([
-            'name'	=> 'randi',
+            'name'	=> 'jimin',
             'jenis_kelamin' => 'laki-laki',
-            'alamat_lengkap' => 'jln.veteran III',
-            'email'	=> 'randi@gmail.com',
-            'password'	=> bcrypt('randijelek'),
+            'alamat_lengkap' => 'korea utara no 345',
+            'email'	=> 'jimin@gmail.com',
+            'password'	=> bcrypt('jiminkorea'),
             'role' => 'user'
         ]);
         \App\Aduan::create([
-            'nama' => 'randi',
+            'nama' => 'Andika',
             'nik'	=> '3201240508040004',
             'no_telp' => '089532632635',
-            'lokasi' => 'bogor',
+            'lokasi' => 'Bogor',
             'aduan'	=> 'banjir',
             'image' => 'tes.png',
             'status'	=> 0
         ]);
         \App\Aduan::create([
             'nama' => 'adis',
-            'nik'	=> '3201240508040004',
-            'no_telp' => '089532632635',
-            'lokasi' => 'bogor',
+            'nik'	=> '3201440902040004',
+            'no_telp' => '089523434633',
+            'lokasi' => 'Jakarta',
             'aduan'	=> 'longsor',
-            'image' => 'tes.png',
+            'image' => 'longsor.png',
             'status'	=> 1
         ]);
         \App\Aduan::create([
-            'nama' => 'apil',
-            'nik'	=> '3201240508040004',
-            'no_telp' => '089532632635',
-            'lokasi' => 'bogor',
-            'aduan'	=> 'laper',
-            'image' => 'tes.png',
+            'nama' => 'jack',
+            'nik'	=> '3201214503040005',
+            'no_telp' => '089678932615',
+            'lokasi' => 'Lampung',
+            'aduan'	=> 'Kelaparan',
+            'image' => 'kelaparan.png',
             'status'	=> 2
         ]);
     }

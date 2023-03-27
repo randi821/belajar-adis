@@ -38,6 +38,6 @@ class AdminController extends Controller
     {
         $data['aduan'] = Aduan::find($id);
         $pdf = \PDF::loadView('cetak-pdf', $data)->setPaper('a4', 'landscape');
-        return $pdf->stream('cetak.pdf');
+        return $pdf->stream('pdf-aduan_'.date('Y-m-d_H:i:s').'.pdf');
     }
 }

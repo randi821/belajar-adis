@@ -23,22 +23,20 @@
 @endsection
 
 @section('navbar')
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{url('home')}}">Halaman Home</a>
+    <li class="nav-item align-self-center">
+        <a class="nav-link" href="{{url('home')}}">Home</a>
+    </li>
+    @can('isAdmin')
+        <li class="nav-item align-self-center">
+            <a class="nav-link" href="{{url('admin')}}">Data Aduan</a>
         </li>
-        @can('isAdmin')
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{url('admin')}}">Halaman Admin</a>
+    @elsecan('isPetugas')
+        <li class="nav-item align-self-center">
+            <a class="nav-link" href="{{url('admin')}}">Data Aduan</a>
         </li>
-        @elsecan('isPetugas')
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{url('admin')}}">Halaman Admin</a>
+    @else
+        <li class="nav-item align-self-center">
+            <a class="nav-link" href="{{url('user')}}">Kirim Aduan</a>
         </li>
-        @else
-        <li class="nav-item">
-            <a class="nav-link" href="{{url('user')}}">Halaman User</a>
-        </li>
-        @endcan
-    </ul>
+    @endcan
 @endsection
